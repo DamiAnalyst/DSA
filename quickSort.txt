@@ -1,0 +1,26 @@
+function quickSort(arr){ 
+   if(arr.length <=1 ){
+     return arr
+   }
+  
+
+   let leftArr = [];
+   let rightArr = [];
+   const pivot = arr[0];
+   
+   for( let i= 1; i<arr.length; i++){
+     
+     if(arr[i] < pivot){
+       leftArr.push(arr[i]);
+     }else {
+       rightArr.push(arr[i]);
+     }
+   }
+
+    const sortedSmaller = quickSort(leftArr);
+    const sortedLarger = quickSort(rightArr);
+  
+  return [...sortedSmaller, pivot, ...sortedLarger]  
+  }
+console.log(quickSort([1,2,5,4,6]))
+console.log(quickSort([-5,-6,4,1,6]))

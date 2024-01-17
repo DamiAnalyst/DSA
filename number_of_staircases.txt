@@ -1,0 +1,13 @@
+function numberOfStaircases (n) {
+  if(n === 1) return 1;
+  if(n== 2) return 2;
+
+  if(n > 2){
+    return numberOfStaircases(n-1) + numberOfStaircases(n-2);
+  }
+  
+}
+
+console.log(numberOfStaircases(3));
+console.log(numberOfStaircases(4));
+console.log(numberOfStaircases(5));

@@ -1,0 +1,31 @@
+function search(arr, target, left, right){
+  if(left>right){
+    return -1
+  }
+  
+  let mid = Math.floor(left+right, 2);
+  if(arr[mid]===target){
+    return mid
+  }
+
+  if(arr[mid]<target){
+    return search(arr,target,mid+1,arr.length-1)   
+  }
+  if(arr[mid]>target){
+    return search(arr,target,0,mid-1)   
+  }
+  
+}
+
+
+function recursiveBinarySearch(arr,target){
+ let left = 0;
+ let right = arr.length-1;
+
+  return search(arr, target, left, right)
+  
+  
+}
+
+console.log(recursiveBinarySearch([1,2,3,4,5],3))
+console.log(recursiveBinarySearch([1,2,3,4,5],20))
